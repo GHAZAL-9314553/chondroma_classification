@@ -1,0 +1,27 @@
+data:
+  wsi_paths:
+    - /gpfs/work1/0/prjs1420/data/train
+    - /gpfs/work1/0/prjs1420/data/test
+  save_dirs: /gpfs/work1/0/prjs1420/patches/
+  # ??? annotation ?? ????? ??????? ????? ???:
+  # annotation_paths:
+  #   - /gpfs/work1/0/prjs1420/annotations/train
+  #   - /gpfs/work1/0/prjs1420/annotations/test
+
+extraction:
+  level: 0
+  patch_size: 256
+  stride: 256
+
+masking:
+  use_annotation: false
+  use_otsu: true
+  use_pen_filter: true
+
+normalization:
+  method: macenko_cellvit
+  reference_path: core/reference_vectors/cellvit_he.json
+  use_normalization: false
+
+reader:
+  backend: CuCIM
